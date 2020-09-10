@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %} {% endblock title %}
+ 
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <h1 class="text-center alert alert-secondary p-4"> welcom {{ user }} bhai </h1>
+
+  <table class="table-bordered table table-hover">
+    <tr class="bg-secondary text-light text-center" >
+      <th>username</th>
+      <th>first name</th>
+      <th>last name</th>
+      <th>email</th> 
+    </tr>
+
+    {% for user in users %}
+ 
+    <tr class="text-center">
+      <td>{{ user.username }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td> {{ user.email }} </td>  
+    </tr> 
+    {% endfor %} 
+
+  </table> 
+    {% for a in images %} 
+       <img src="{{a}}" alt="kamleen"> 
+    {% endfor %}  
+ 
+    {% else %} 
+
+
+ <div class="alert alert-light mt-4 p-4 font-weight-lighter">
+    <h1 class="text-center alert alert-secondary p-4"> Please Login !!!   </h1>
+     <a href="/login">login from here </a> <br>
+     Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam non reiciendis necessitatibus, iure assumenda ea voluptate inventore quae voluptas natus perferendis repudiandae totam odio fugiat enim officiis vitae temporibus dolor maiores consectetur facere. Molestias deserunt quisquam blanditiis cumque itaque excepturi culpa, perspiciatis aut molestiae natus explicabo fuga, voluptates, facilis obcaecati beatae magnam sint temporibus animi harum ducimus. Assumenda vel corporis voluptatum amet! Facilis quia labore hic commodi minima odit, quae animi natus. Dolores a quas, sapiente voluptatem, excepturi dolor quam animi, tenetur libero nulla quibusdam vel quis commodi fugiat nobis? Velit, hic. Dolorem commodi soluta aliquam perferendis sunt maxime voluptatem aut odit dolore ullam minus voluptas, vitae cupiditate nesciunt qui sequi. Accusantium tenetur non iste accusamus porro voluptatem assumenda aliquam, libero repellat quidem maiores eum laboriosam? Deserunt nobis laudantium accusamus magnam quae at, itaque omnis quo! Deserunt cum amet dolores explicabo quisquam, consequuntur delectus laboriosam dolore commodi ullam placeat recusandae!
+ </div>
+
+</div>
+{% endif %}
+
+<br><br><br><br>
+
+{% endblock body %}
